@@ -4,6 +4,8 @@ import 'decorator_example_page.dart';
 import 'composite_example_page.dart';
 import 'proxy_example_page.dart';
 import 'facade_example_page.dart';
+import 'bridge_example_page.dart';
+import 'flyweight_example_page.dart';
 
 class StructuralPatternsPage extends StatelessWidget {
   const StructuralPatternsPage({Key? key}) : super(key: key);
@@ -58,7 +60,7 @@ class StructuralPatternsPage extends StatelessWidget {
             _buildPatternItem(
               context,
               '代理模式 (Proxy)',
-              '代理模式為其他物件提供一個替身或佔位符，以控制對這個物件的存取。',
+              '代理模式為其他物件提供一個替代品或佔位符，以控制對它的存取。',
               () => Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -70,11 +72,35 @@ class StructuralPatternsPage extends StatelessWidget {
             _buildPatternItem(
               context,
               '外觀模式 (Facade)',
-              '外觀模式提供一個統一的介面，用來存取子系統中的一群介面，簡化複雜系統的使用。',
+              '為子系統中的一組介面提供一個一致的介面，使子系統更加容易使用。',
               () => Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => const FacadeExamplePage(),
+                ),
+              ),
+            ),
+            const SizedBox(height: 16),
+            _buildPatternItem(
+              context,
+              '橋接模式 (Bridge)',
+              '將抽象部分與實現部分分離，使它們可以獨立變化。',
+              () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const BridgeExamplePage(),
+                ),
+              ),
+            ),
+            const SizedBox(height: 16),
+            _buildPatternItem(
+              context,
+              '享元模式 (Flyweight)',
+              '通過共享技術有效支持大量細粒度物件的複用，節省記憶體空間。',
+              () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const FlyweightExamplePage(),
                 ),
               ),
             ),
