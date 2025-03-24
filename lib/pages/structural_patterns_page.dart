@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'adapter_example_page.dart';
 import 'decorator_example_page.dart';
 import 'composite_example_page.dart';
+import 'proxy_example_page.dart';
+import 'facade_example_page.dart';
 
 class StructuralPatternsPage extends StatelessWidget {
   const StructuralPatternsPage({Key? key}) : super(key: key);
@@ -49,6 +51,30 @@ class StructuralPatternsPage extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) => const CompositeExamplePage(),
+                ),
+              ),
+            ),
+            const SizedBox(height: 16),
+            _buildPatternItem(
+              context,
+              '代理模式 (Proxy)',
+              '代理模式為其他物件提供一個替身或佔位符，以控制對這個物件的存取。',
+              () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ProxyExamplePage(),
+                ),
+              ),
+            ),
+            const SizedBox(height: 16),
+            _buildPatternItem(
+              context,
+              '外觀模式 (Facade)',
+              '外觀模式提供一個統一的介面，用來存取子系統中的一群介面，簡化複雜系統的使用。',
+              () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const FacadeExamplePage(),
                 ),
               ),
             ),
