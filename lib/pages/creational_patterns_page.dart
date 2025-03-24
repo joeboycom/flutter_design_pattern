@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'singleton_example_page.dart';
 import 'factory_example_page.dart';
+import 'abstract_factory_example_page.dart';
+import 'builder_example_page.dart';
+import 'prototype_example_page.dart';
 
 class CreationalPatternsPage extends StatelessWidget {
   const CreationalPatternsPage({Key? key}) : super(key: key);
@@ -44,21 +47,36 @@ class CreationalPatternsPage extends StatelessWidget {
               context,
               '抽象工廠模式 (Abstract Factory)',
               '提供一個創建一系列相關或相互依賴對象的接口，而無需指定它們具體的類。',
-              () {},
+              () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AbstractFactoryExamplePage(),
+                ),
+              ),
             ),
             const SizedBox(height: 8),
             _buildPatternItem(
               context,
               '建造者模式 (Builder)',
               '將一個複雜對象的構建與它的表示分離，使得同樣的構建過程可以創建不同的表示。',
-              () {},
+              () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const BuilderExamplePage(),
+                ),
+              ),
             ),
             const SizedBox(height: 8),
             _buildPatternItem(
               context,
               '原型模式 (Prototype)',
               '用原型實例指定創建對象的種類，並且通過拷貝這些原型創建新的對象。',
-              () {},
+              () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const PrototypeExamplePage(),
+                ),
+              ),
             ),
           ],
         ),
