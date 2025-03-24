@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'creational_patterns_page.dart';
 import 'structural_patterns_page.dart';
+import 'behavioral_patterns_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -44,7 +45,12 @@ class HomePage extends StatelessWidget {
               context,
               '行為型模式 (Behavioral Patterns)',
               '關注對象之間的通信，描述類或對象間怎樣交互和分配職責。',
-              () {},
+              () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const BehavioralPatternsPage(),
+                ),
+              ),
             ),
           ],
         ),
